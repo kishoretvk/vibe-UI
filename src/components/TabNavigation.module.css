@@ -1,0 +1,40 @@
+/* src/components/TabNavigation.module.css */
+
+.tabNav {
+  display: flex;
+  border-bottom: 2px solid var(--border-color-light, #e5e7eb); /* Use theme variable */
+  margin-bottom: 1rem;
+  background-color: var(--container-bg, #ffffff); /* Match container background */
+  padding: 0 1rem; /* Add some padding */
+}
+
+.tabButton {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color-secondary, #6b7280); /* Use secondary text color */
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+  border-bottom: 3px solid transparent; /* Placeholder for active indicator */
+  margin-bottom: -2px; /* Align bottom border with nav border */
+}
+
+.tabButton:hover {
+  color: var(--text-color, #1f2937); /* Use primary text color on hover */
+}
+
+.tabButton.active {
+  color: var(--link-color, #1d4ed8); /* Use link color for active tab */
+  border-bottom-color: var(--link-color, #1d4ed8); /* Active indicator */
+  font-weight: 600;
+}
+
+/* Basic focus style for accessibility */
+.tabButton:focus-visible {
+  outline: 2px solid var(--link-color, #1d4ed8);
+  outline-offset: 2px;
+  border-radius: 4px; /* Optional: add radius to focus outline */
+}
