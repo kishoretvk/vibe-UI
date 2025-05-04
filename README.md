@@ -71,10 +71,10 @@ To get the Enhanced Data App running locally, follow these steps:
 
 Here are some screenshots of the application:
 
-![Screenshot 2025-04-21 at 8.58.06 AM](Screenshot%202025-04-21%20at%208.58.06%20%E2%80%AFAm.png)
-![Screenshot 2025-04-21 at 9.12.52 PM](Screenshot%202025-04-21%20at%209.12.52%20%E2%80%A0PM.png)
-![Screenshot 2025-05-04 at 12.17.26 PM](Screenshot%202025-05-04%20at%2012.17.26%20%E2%80%AFAm.png)
-![Screenshot 2025-05-04 at 12.17.41 PM](Screenshot%202025-05-04%20at%2012.17.41%20%E2%80%A0PM.png)
+![Screenshot 2025-04-21 at 8.58.06 AM](https://github.com/kishoretvk/vibe-UI/blob/main/Screenshot%202025-04-21%20at%208.58.06%20%E2%80%AFAm.png)
+![Screenshot 2025-04-21 at 9.12.52 PM](https://github.com/kishoretvk/vibe-UI/blob/main/Screenshot%202025-04-21%20at%209.12.52%20%E2%80%A0PM.png)
+![Screenshot 2025-05-04 at 12.17.26 PM](https://github.com/kishoretvk/vibe-UI/blob/main/Screenshot%202025-05-04%20at%2012.17.26%20%E2%80%AFAm.png)
+![Screenshot 2025-05-04 at 12.17.41 PM](https://github.com/kishoretvk/vibe-UI/blob/main/Screenshot%202025-05-04%20at%2012.17.41%20%E2%80%A0PM.png)
 
 ## Contribution and Deployment
 
