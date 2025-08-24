@@ -1,0 +1,6 @@
+# Dependencies for llm-integration-service
+flask==2.3.2
+flask-cors==4.0.0
+openai==0.28.0
+google-generativeai==0.3.1
+python-dotenv==1.0.0

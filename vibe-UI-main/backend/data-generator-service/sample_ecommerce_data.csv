@@ -1,0 +1,31 @@
+date,product_category,product_name,sales_quantity,unit_price,total_revenue,region,customer_segment
+2024-01-01,Electronics,iPhone 15,120,999,119880,North America,Premium
+2024-01-01,Electronics,Samsung Galaxy S24,95,899,85405,North America,Premium
+2024-01-01,Clothing,Nike Air Max,250,120,30000,North America,Standard
+2024-01-01,Home & Kitchen,Instant Pot,80,89,7120,North America,Standard
+2024-01-01,Books,"The AI Revolution",150,25,3750,North America,Standard
+2024-02-01,Electronics,iPhone 15,135,999,134865,North America,Premium
+2024-02-01,Electronics,Samsung Galaxy S24,110,899,98890,North America,Premium
+2024-02-01,Clothing,Nike Air Max,275,120,33000,North America,Standard
+2024-02-01,Home & Kitchen,Instant Pot,95,89,8455,North America,Standard
+2024-02-01,Books,"The AI Revolution",175,25,4375,North America,Standard
+2024-03-01,Electronics,iPhone 15,142,999,141858,North America,Premium
+2024-03-01,Electronics,Samsung Galaxy S24,125,899,112375,North America,Premium
+2024-03-01,Clothing,Nike Air Max,290,120,34800,North America,Standard
+2024-03-01,Home & Kitchen,Instant Pot,110,89,9790,North America,Standard
+2024-03-01,Books,"The AI Revolution",200,25,5000,North America,Standard
+2024-04-01,Electronics,iPhone 15,158,999,157842,North America,Premium
+2024-04-01,Electronics,Samsung Galaxy S24,140,899,125860,North America,Premium
+2024-04-01,Clothing,Nike Air Max,320,120,38400,North America,Standard
+2024-04-01,Home & Kitchen,Instant Pot,125,89,11125,North America,Standard
+2024-04-01,Books,"The AI Revolution",225,25,5625,North America,Standard
+2024-05-01,Electronics,iPhone 15,165,999,164835,North America,Premium
+2024-05-01,Electronics,Samsung Galaxy S24,155,899,139345,North America,Premium
+2024-05-01,Clothing,Nike Air Max,340,120,40800,North America,Standard
+2024-05-01,Home & Kitchen,Instant Pot,140,89,12460,North America,Standard
+2024-05-01,Books,"The AI Revolution",250,25,6250,North America,Standard
+2024-05-15,Electronics,iPhone 15,210,999,209790,North America,Premium
+2024-05-15,Electronics,Samsung Galaxy S24,180,899,161820,North America,Premium
+2024-05-15,Clothing,Nike Air Max,380,120,45600,North America,Standard
+2024-05-15,Home & Kitchen,Instant Pot,165,89,14685,North America,Standard
+2024-05-15,Books,"The AI Revolution",300,25,7500,North America,Standard

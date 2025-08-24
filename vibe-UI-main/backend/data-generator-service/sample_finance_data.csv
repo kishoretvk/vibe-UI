@@ -1,0 +1,23 @@
+date,category,subcategory,amount,currency,region,department
+2024-01-01,Revenue,Product Sales,125000,USD,North America,Sales
+2024-01-01,Revenue,Service Revenue,75000,USD,North America,Services
+2024-01-01,Expense,Salaries,95000,USD,North America,HR
+2024-01-01,Expense,Marketing,35000,USD,North America,Marketing
+2024-02-01,Revenue,Product Sales,135000,USD,North America,Sales
+2024-02-01,Revenue,Service Revenue,82000,USD,North America,Services
+2024-02-01,Expense,Salaries,98000,USD,North America,HR
+2024-02-01,Expense,Marketing,38000,USD,North America,Marketing
+2024-03-01,Revenue,Product Sales,142000,USD,North America,Sales
+2024-03-01,Revenue,Service Revenue,89000,USD,North America,Services
+2024-03-01,Expense,Salaries,102000,USD,North America,HR
+2024-03-01,Expense,Marketing,42000,USD,North America,Marketing
+2024-04-01,Revenue,Product Sales,158000,USD,North America,Sales
+2024-04-01,Revenue,Service Revenue,96000,USD,North America,Services
+2024-04-01,Expense,Salaries,105000,USD,North America,HR
+2024-04-01,Expense,Marketing,45000,USD,North America,Marketing
+2024-05-01,Revenue,Product Sales,165000,USD,North America,Sales
+2024-05-01,Revenue,Service Revenue,102000,USD,North America,Services
+2024-05-01,Expense,Salaries,108000,USD,North America,HR
+2024-05-01,Expense,Marketing,48000,USD,North America,Marketing
+2024-05-15,Revenue,Product Sales,210000,USD,North America,Sales
+2024-05-15,Revenue,One-time Sale,75000,USD,North America,Sales

@@ -1,0 +1,35 @@
+.toggleContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toggleIcon {
+  font-size: 1.1rem;
+}
+
+/* Dark mode specific styles */
+.dark-theme .toggleButton {
+  background: var(--dark-button-bg);
+  color: var(--dark-button-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}

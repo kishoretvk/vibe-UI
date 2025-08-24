@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "department": "Engineering",
+    "salary": 75000,
+    "join_date": "2022-01-15"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "department": "Marketing",
+    "salary": 65000,
+    "join_date": "2021-03-22"
+  },
+  {
+    "id": 3,
+    "name": "Robert Johnson",
+    "department": "Sales",
+    "salary": 70000,
+    "join_date": "2020-11-05"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "department": "Engineering",
+    "salary": 80000,
+    "join_date": "2019-07-18"
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "department": "HR",
+    "salary": 60000,
+    "join_date": "2023-02-10"
+  }
+]

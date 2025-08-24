@@ -1,0 +1,238 @@
+version: '3.8'
+
+services:
+  # Frontend Service
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - ai-analysis-service
+      - data-processing-service
+      - reporting-service
+      - notification-service
+      - llm-integration-service
+      - cache-service
+      - scheduling-service
+      - user-management-service
+      - data-generator-service
+    networks:
+      - vibe-network
+
+  # AI Analysis Service
+  ai-analysis-service:
+    build:
+      context: ./backend/ai-analysis-service
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - PYTHONPATH=/app
+      - LLM_SERVICE_URL=http://llm-integration-service:5006
+      - DATA_SERVICE_URL=http://data-processing-service:5002
+      - CACHE_SERVICE_URL=http://cache-service:5005
+    depends_on:
+      - mongodb
+      - redis
+      - llm-integration-service
+      - data-processing-service
+      - cache-service
+    networks:
+      - vibe-network
+
+  # Data Processing Service
+  data-processing-service:
+    build:
+      context: ./backend/data-processing-service
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=mongodb://mongodb:27017/vibeui
+      - CACHE_SERVICE_URL=http://cache-service:5005
+    depends_on:
+      - mongodb
+      - redis
+      - cache-service
+    networks:
+      - vibe-network
+
+  # Reporting Service
+  reporting-service:
+    build:
+      context: ./backend/reporting-service
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=mongodb://mongodb:27017/vibeui
+      - NOTIFICATION_SERVICE_URL=http://notification-service:5004
+      - SCHEDULING_SERVICE_URL=http://scheduling-service:5007
+    depends_on:
+      - mongodb
+      - notification-service
+      - scheduling-service
+    networks:
+      - vibe-network
+
+  # Notification Service
+  notification-service:
+    build:
+      context: ./backend/notification-service
+      dockerfile: Dockerfile
+    ports:
+      - "5004:5004"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=mongodb://mongodb:27017/vibeui
+    depends_on:
+      - mongodb
+    networks:
+      - vibe-network
+
+  # LLM Integration Service
+  llm-integration-service:
+    build:
+      context: ./backend/llm-integration-service
+      dockerfile: Dockerfile
+    ports:
+      - "5006:5005"
+    environment:
+      - PYTHONPATH=/app
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CACHE_SERVICE_URL=http://cache-service:5005
+    depends_on:
+      - redis
+      - cache-service
+    networks:
+      - vibe-network
+
+  # Cache Service
+  cache-service:
+    build:
+      context: ./backend/cache-service
+      dockerfile: Dockerfile
+    ports:
+      - "5010:5005"
+    environment:
+      - PYTHONPATH=/app
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    networks:
+      - vibe-network
+
+  # Scheduling Service
+  scheduling-service:
+    build:
+      context: ./backend/scheduling-service
+      dockerfile: Dockerfile
+    ports:
+      - "5007:5007"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=mongodb://mongodb:27017/vibeui
+      - REPORTING_SERVICE_URL=http://reporting-service:5003
+    depends_on:
+      - mongodb
+      - reporting-service
+    networks:
+      - vibe-network
+
+  # User Management Service
+  user-management-service:
+    build:
+      context: ./backend/user-management-service
+      dockerfile: Dockerfile
+    ports:
+      - "5008:5008"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=mongodb://mongodb:27017/vibeui
+    depends_on:
+      - mongodb
+    networks:
+      - vibe-network
+
+  # Data Generator Service (for demo data)
+  data-generator-service:
+    build:
+      context: ./backend/data-generator-service
+      dockerfile: Dockerfile
+    ports:
+      - "5009:5009"
+    environment:
+      - PYTHONPATH=/app
+    networks:
+      - vibe-network
+
+  # Anomaly Detection Service
+  anomaly-detection-service:
+    build:
+      context: ./backend/anomaly-detection-service
+      dockerfile: Dockerfile
+    ports:
+      - "5006:5006"
+    environment:
+      - PYTHONPATH=/app
+    networks:
+      - vibe-network
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - vibe-network
+
+  # Redis Cache
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - vibe-network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - ai-analysis-service
+      - data-processing-service
+      - reporting-service
+      - notification-service
+      - llm-integration-service
+      - cache-service
+      - scheduling-service
+      - user-management-service
+      - data-generator-service
+    networks:
+      - vibe-network
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  vibe-network:
+    driver: bridge
